@@ -15,7 +15,7 @@ export default function ProductBrief({open, setOpen, currBrief}){
             setExpand({w:"min-w-[30vw]", h:"min-h-[20vw]"})
         }
         console.log("hello", expand)
-    }
+    }   
     const handleClose=()=>{
         setOpen(false)
     }

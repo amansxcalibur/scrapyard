@@ -5,6 +5,7 @@ import Map from "@/components/map_elements/map"
 import SampleResults from "@/components/search_elements/results"
 import SearchBar from "@/components/search_elements/search_bar"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 export default function MapsTest(){
     const [open, setOpen] = useState(false);
@@ -35,7 +36,11 @@ export default function MapsTest(){
     },[currIndex])
     return(
         <div className="flex-1 flex">
-            <div className="bg-purple-500 flex-1 h-screen flex flex-col p-[1vw]">
+            <div className="bg-light flex-1 h-screen flex flex-col p-[1vw]">
+                <div className="">
+                    <Image src="/lgog.png" width={1} height={1}
+                     className="min-h-[4vw] w-auto" unoptimized/>
+                </div>
                 <div className="w-full">
                     <SearchBar/>
                 </div>
@@ -48,7 +53,7 @@ export default function MapsTest(){
                     />
                 </div>
             </div>
-            <div className="bg-blue-300 flex-[3] flex justify-end">
+            <div className="bg-light flex-[3] flex justify-end ">
                 <div className="rounded-[3vw] bg-red-300 flex-1 overflow-hidden">
                     <Map data={data} focusPos={focusPos} setFocusPos={setFocusPos}/>
                 </div>

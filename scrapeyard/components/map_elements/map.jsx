@@ -40,7 +40,7 @@ export default function Map({data, focusPos, setFocusPos}){
     //   }
     // const position = [51.505, -0.09]
     return(
-        <MapContainer center={data[0].coord} zoom={13} scrollWheelZoom={false} style={{ height: "100vh", width: "100%" }}>
+        <MapContainer center={data[0].coord} zoom={13} scrollWheelZoom={false} style={{ height: "100vh", width: "100%" , boxShadow: 'inset gray 0px 0px 60px -12px'}}>
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

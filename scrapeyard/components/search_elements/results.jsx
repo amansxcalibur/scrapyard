@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function SampleResults({open, setOpen, setCurrIndex, currIndex, data, setFocusPos}){
     // const fruits = ["Apple", "Mango", "Banana", "GFG"];
     const handleShowBrief=(index, fruit)=>{
+        
         if (open && currIndex!=undefined && index==currIndex){
             setOpen(false)
         }else{
