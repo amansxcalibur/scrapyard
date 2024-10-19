@@ -13,13 +13,23 @@ export default function MapsTest(){
         {
             name:"chevy",
             price:'233',
-            coord: [51.505, -0.09]
+            coord: [51.505, -0.09],
+            transmission: "auto",
+            cost: 245,
+            mileage: 12.3,
+            fuel_type: 'diesel',
+            prev_owner_count: 3
         },
         {
             name:'mazda',
             price: '431',
             coord: [51.5051, -0.10],
-        }
+            transmission: "manuel",
+            cost: 912,
+            mileage: 39.2,
+            fuel_type: 'petrol',
+            prev_owner_count: 1
+        },
     ]);
     const [currBrief, setCurrBrief] = useState({});
     const [currIndex, setCurrIndex] = useState(null);
@@ -37,9 +47,9 @@ export default function MapsTest(){
     return(
         <div className="flex-1 flex">
             <div className="bg-light flex-1 h-screen flex flex-col p-[1vw]">
-                <div className="">
-                    <Image src="/lgog.png" width={1} height={1}
-                     className="min-h-[4vw] w-auto" unoptimized/>
+                <div className="text-black text-[3vw] tracking-tighter font-semibold">
+                    {/* <Image src="/lgog.png" width={1} height={1}
+                     className="min-h-[4vw] w-auto" unoptimized/> */}SCRAPEYARD
                 </div>
                 <div className="w-full">
                     <SearchBar/>
