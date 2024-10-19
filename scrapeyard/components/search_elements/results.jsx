@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function SampleResults({open, setOpen}){
-    const fruits = ["Apple", "Mango", "Banana", "GFG"];
-    const [curr_index, setCurrIndex] = useState(null)
+export default function SampleResults({open, setOpen, setCurrIndex, currIndex, data}){
+    // const fruits = ["Apple", "Mango", "Banana", "GFG"];
     const handleShowBrief=(index, fruit)=>{
-        if (open && curr_index!=undefined && index==curr_index){
+        if (open && currIndex!=undefined && index==currIndex){
             setOpen(false)
         }else{
             setOpen(true)
@@ -16,7 +15,7 @@ export default function SampleResults({open, setOpen}){
     return(
         <div>
             <ul className="bg-red-400">
-                {fruits.map((fruit, index) => (
+                {data.map((fruit, index) => (
                     <>
                     <li key={index} className="bg-blue-500 min-h-[8vw] flex items-center" onClick={()=>{handleShowBrief(index, fruit)}}>
                         <div className="max-h-[7.5vw] overflow-hidden rounded-[0.5vw]">
@@ -24,7 +23,7 @@ export default function SampleResults({open, setOpen}){
                         </div>
                         <div className="flex flex-col bg-red-500 min-h-[7.5vw] flex-1">
                             <div>
-                                {fruit} {index}
+                                {fruit.name} {index}
                             </div>
                             <div className="flex">
                                 <div className="bg-white rounded-full min-h-[3vw] min-w-[3vw]"></div>
