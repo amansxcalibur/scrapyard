@@ -4,6 +4,7 @@ export default function SearchForm(){
     }
     return(
         <form onSubmit={handleSubmit} className="min-h-[80vh] min-w-[40vw] bg-light flex justify-center items-center flex-col rounded-[2vw]">
+            <p className="text-[4.5vw] tracking-tighter w-[30vw] text-start font-semibold">ENTER</p><br/><p className="font-semibold text-[4.5vw] tracking-tighter -mt-[2.7vw] w-[30vw] text-start">DETAILS</p>
             <div className="flex flex-col w-[30vw]">
                 {/* <label>Model</label>
                 <input type="text" placeholder="Model" className="w-full rounded-[2vw] min-h-[4vw] mb-[1vw]"></input>
