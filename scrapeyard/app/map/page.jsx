@@ -11,15 +11,18 @@ export default function MapsTest(){
     const [data, setData] = useState([
         {
             name:"chevy",
-            price:'233'
+            price:'233',
+            coord: [51.505, -0.09]
         },
         {
             name:'mazda',
-            price: '431'
+            price: '431',
+            coord: [51.5051, -0.10],
         }
     ]);
     const [currBrief, setCurrBrief] = useState({});
-    const [currIndex, setCurrIndex] = useState(null)
+    const [currIndex, setCurrIndex] = useState(null);
+    const [focusPos, setFocusPos] = useState(data[0]);
 
     useEffect(()=>{
         //axios get
@@ -41,12 +44,13 @@ export default function MapsTest(){
                     data={data}
                     setCurrIndex={setCurrIndex}
                     currIndex={currIndex}
+                    setFocusPos={setFocusPos}
                     />
                 </div>
             </div>
             <div className="bg-blue-300 flex-[3] flex justify-end">
                 <div className="rounded-[3vw] bg-red-300 flex-1 overflow-hidden">
-                    <Map/>
+                    <Map data={data} focusPos={focusPos} setFocusPos={setFocusPos}/>
                 </div>
                 <ProductBrief open={open} setOpen={setOpen} currBrief={currBrief}/>
             </div>
