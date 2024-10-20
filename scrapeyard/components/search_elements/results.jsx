@@ -42,7 +42,7 @@ export default function SampleResults({open, setOpen, setCurrIndex, data, currIn
                                 
                             </div>
                             <div className="flex-1 flex items-center">
-                                <p className="text-[2vw] font-semibold">${fruit.price}</p>
+                                <p className="text-[2vw] font-semibold">{fruit.price}</p>
                             </div>
                         </div>
                     </button>

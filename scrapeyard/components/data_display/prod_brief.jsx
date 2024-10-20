@@ -12,7 +12,7 @@ export default function ProductBrief({open, setOpen, currBrief}){
 
     const handleClick=()=>{
         if (expand.w=="min-w-[30vw]"){
-            setExpand({w:"min-w-[50vw]", h:"min-h-[98vh]"})
+            setExpand({w:"min-w-[50vw]", h:"min-h-[25vh]"})
         }else{
             setExpand({w:"min-w-[30vw]", h:"min-h-[20vw]"})
         }
@@ -28,18 +28,18 @@ export default function ProductBrief({open, setOpen, currBrief}){
         }
     }, [open])
     return(
-        <div className={`absolute z-[500] text-black ${expand.w} ${expand.h} bg-white rounded-[3vw] m-[0.5vw] flex flex-col p-[1.5vw] ${open?'':'hidden'}`}>
+        <div className={`absolute z-[500] text-black ${expand.w} ${expand.h} bg-light rounded-[3vw] m-[0.5vw] flex flex-col p-[1.5vw] ${open?'':'hidden'}`}>
             <div className="flex">
                 <button className={`${expand.w=='min-w-[30vw]'?'hidden':''}`} onClick={handleClick}><ChevronDefaultLeft/></button>
                 <div className="w-full"></div>
                 <button onClick={handleClose}><X/></button>
             </div>
-            <div className={` bg-blue-300 ${expand.w=='min-w-[30vw]'?'':'flex pb-[2vw]'} rounded-[2vw] p-[1vw]`}>
-                <div className="w-[30vw] overflow-hidden max-h-[20vw] rounded-[1vw]"><Image src="/uWu.jpg" width={1} height={1} className="h-auto min-w-[30vw]"/></div>
+            <div className={` bg-white ${expand.w=='min-w-[30vw]'?'':'flex pb-[2vw]'} rounded-[2vw] p-[1vw]`}>
+                <div className="w-[30vw] overflow-hidden max-h-[20vw] rounded-[1vw]"><Image src="/car.webp" width={1} height={1} className="h-auto min-w-[30vw]" unoptimized/></div>
                 <div className="pl-[1vw]">
                     <div className="text-[2vw] font-semibold">{currBrief.name}</div>
                     <div className={`${expand.w=='min-w-[30vw]'?'hidden':''} flex-1 flex flex-col text-[1.2vw]`}>
-                        <p className="text-[3vw] font-semibold">${currBrief.price}</p>
+                        <p className="text-[3vw] font-semibold">{currBrief.price}<br/><p className="text-[1vw] font-extralight -mb-[.5vw]">Predicted value<br/></p> <span className="text-green-400">Rs.1.7L</span></p>
                         <p><strong>COORD:</strong> {currBrief.coord}</p>
                         <p><strong>Transmission:</strong> {currBrief.transmission}</p>
                         <p><strong>Cost:</strong> {currBrief.cost}</p>

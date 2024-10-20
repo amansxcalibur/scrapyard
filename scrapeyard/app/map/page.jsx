@@ -14,7 +14,7 @@ export default function MapsTest(){
     const [data, setData] = useState([
         {
             name:"chevy",
-            price:'233',
+            price:'Rs.2.3L',
             coord: [51.505, -0.09],
             transmission: "auto",
             cost: 245,
@@ -27,7 +27,7 @@ export default function MapsTest(){
         },
         {
             name:'mazda',
-            price: '431',
+            price: 'Rs.4.3L',
             coord: [10.042787179069377, 76.3284576954426],
             transmission: "manuel",
             cost: 912,
