@@ -28,7 +28,7 @@ export default function MapsTest(){
         {
             name:'mazda',
             price: '431',
-            coord: [51.5051, -0.10],
+            coord: [10.042787179069377, 76.3284576954426],
             transmission: "manuel",
             cost: 912,
             mileage: 39.2,

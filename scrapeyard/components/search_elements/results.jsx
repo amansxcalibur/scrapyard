@@ -26,7 +26,7 @@ export default function SampleResults({open, setOpen, setCurrIndex, data, currIn
                         </div>
                         <div className="flex flex-col min-h-[7.5vw] flex-1 mx-[1vw]">
                             <div className="text-start">
-                                <p className="text-[1.5vw]">{fruit.name} {index}</p>
+                                <p className="text-[1.5vw]">{fruit.name}</p>
                             </div>
                             <div className="flex -mt-[0.5vw]">
                                 <Link href={fruit.url} className="hover:bg-white rounded-full min-h-[3vw] min-w-[3vw] flex justify-center items-center">
@@ -38,6 +38,7 @@ export default function SampleResults({open, setOpen, setCurrIndex, data, currIn
                                     <Image src="/carwale.png" width={1} height={1} className="max-h-[2vw] w-auto" unoptimized/>
                                     :''}
                                 </Link>
+                                <p className="min-h-[3vw] flex items-center">Available Links to buy</p>
                                 
                             </div>
                             <div className="flex-1 flex items-center">

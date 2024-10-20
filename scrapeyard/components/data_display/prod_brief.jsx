@@ -50,6 +50,7 @@ export default function ProductBrief({open, setOpen, currBrief}){
                 </div>
             </div>
             <div className={`${expand.w=='min-w-[30vw]'?'hidden':''} flex-[2] flex flex-col`}>
+                {/* <button><Link href={currBrief.url}>Buy Now</Link></button> */}
                 {/* <p>Price: {currBrief.price}</p>
                 <p>COORD: {currBrief.coord}</p>
                 <p>Transmission: {currBrief.transmission}</p>
