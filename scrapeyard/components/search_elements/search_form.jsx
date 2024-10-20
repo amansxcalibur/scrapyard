@@ -101,16 +101,31 @@ export default function SearchForm(){
                 {/* <input type="number" placeholder="cost start range" className="w-full rounded-[2vw] min-h-[4vw]"></input>
                 <input type="number" placeholder="cost end range" className="w-full rounded-[2vw] min-h-[4vw]"></input> */}
                 <div className="flex flex-col flex-1">
-                    <div className="flex">
-                        <p className="text-[2vw] mr-[1vw]">Price</p>
-                        <input id="max_price" 
-                        //placeholder="MaxPrice"
-                        value={state.password}
-                        onChange={handleChange}
-                        type="text" 
-                        className="bg-transparent w-full px-[0.5vw] text-[2vw]"></input>
+                <div className="flex">
+                    <div>
+                        <div className="flex">
+                            <p className="text-[2vw] mr-[1vw]">Price</p>
+                            <input id="max_price" 
+                            //placeholder="MaxPrice"
+                            value={state.password}
+                            onChange={handleChange}
+                            type="text" 
+                            className="bg-transparent w-full px-[0.5vw] text-[2vw]"></input>
+                        </div>
+                        <div className="h-[2px] bg-black w-full mb-[0.5vw]"></div>
                     </div>
-                    <div className="h-[2px] bg-black w-full mb-[0.5vw]"></div>
+                    <div>
+                        <div className="flex">
+                            <p className="text-[2vw] mr-[1vw]">Owners</p>
+                            <input id="owner_count" 
+                            //placeholder="Owner Count"
+                            value={state.password}
+                            onChange={handleChange}
+                            type="text" className="bg-transparent w-full px-[0.5vw] text-[2vw]"></input>
+                        </div>
+                        <div className="ml-1 rounded-[2vw] h-[2px] bg-black w-full mb-[0.5vw]"></div>
+                    </div>
+                    </div>
                     <div className="flex">
                         <p className="text-[2vw] mr-[1vw]">Location</p>
                         <input id="location" 
@@ -121,19 +136,11 @@ export default function SearchForm(){
                         className="bg-transparent w-full px-[0.5vw] text-[2vw]"></input>
                     </div>
                     <div className="h-[2px] bg-black w-full mb-[0.5vw]"></div>
-                    <div className="flex">
-                        <p className="text-[2vw] mr-[1vw]">Owners</p>
-                        <input id="owner_count" 
-                        //placeholder="Owner Count"
-                        value={state.password}
-                        onChange={handleChange}
-                        type="text" className="bg-transparent w-full px-[0.5vw] text-[2vw]"></input>
-                    </div>
-                    <div className="h-[2px] bg-black w-full mb-[0.5vw]"></div>
-                </div>
-                <button type="submit" className="flex-1 bg-black rounded-[2vw] flex justify-center items-center ml-[1vw] mt-[1vw] min-h-[20vh]">
+                    <button type="submit" className="flex-1 bg-black rounded-[2vw] flex justify-center items-center mt-[1vw] w-full min-h-[4vw]">
                     <p className="text-white">SEARCH</p>
                 </button>
+                </div>
+                
             </div>
             {/* <div>
                 <button type="submit">Search</button>
