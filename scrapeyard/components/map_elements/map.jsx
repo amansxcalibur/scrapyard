@@ -39,8 +39,11 @@ export default function Map({data, focusPos, setFocusPos}){
     //     return null;
     //   }
     // const position = [51.505, -0.09]
+    // useEffect(()=>{
+    //     // setData(JSON.parse(localStorage.getItem('put_in')))
+    // },[])
     return(
-        <MapContainer center={data[0].coord} zoom={13} scrollWheelZoom={false} style={{ height: "100vh", width: "100%" , boxShadow: 'inset gray 0px 0px 60px -12px'}}>
+        <MapContainer center={data[0].coord} zoom={13} scrollWheelZoom={false} style={{ height: "100vh", width: "100%" , boxShadow: 'inset 0 0 60px -12px gray'}}>
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

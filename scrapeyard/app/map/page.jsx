@@ -42,78 +42,69 @@ export default function MapsTest(){
     const [inter, setInter] = useState();
     const [currBrief, setCurrBrief] = useState({});
     const [currIndex, setCurrIndex] = useState(null);
-    const [focusPos, setFocusPos] = useState(data[0]);
-    
+    const [focusPos, setFocusPos] = useState(null); 
     
     useEffect(()=>{
-        console.log('here is ',JSON.parse(localStorage.getItem(ACCESS_TOKEN_NAME)));
-        // setData(JSON.parse(localStorage.getItem(ACCESS_TOKEN_NAME)))
         let temp = JSON.parse(localStorage.getItem(ACCESS_TOKEN_NAME));
-        temp=Filter(temp);
-        // console.log("msde the temp here", temp)
-        setInter(temp)
+        temp = Filter(temp);
+        setInter(temp);
+        localStorage.setItem('in', JSON.stringify(temp));
     },[])
-    // useEffect(()=>{
-    //     // setData(inter)
-    //     if (inter!=undefined){
-    //     console.log('ghere is the inter',inter)
-    //     let thirdparty=[]
-    //     for (let i=0; i<inter.length; i++){
-    //         // thirdparty.push(GetCoord(inter[i]));
-    //         GetCoord(inter[i])
-    //     }
-    //     // setData(thirdparty);
-    //     }
-    // },[inter])
 
-    // useEffect(()=>{
-    //     //axios get
-    //     //activate when search bar gets submitted
-    // })
+    useEffect(() => {
+        console.log(data, inter, 'here is data and inter');
+        if (inter && inter.length > 0) {
+        }
+    }, [inter]);
+
     useEffect(()=>{
         if (currIndex != null){
             setCurrBrief(data[currIndex]);
         }
     },[currIndex])
+
+    useEffect(()=>{
+        if (data.length > 0) {
+            setFocusPos(data[0]);
+        }
+    }, [data]);
+
     return(
         <div className="flex-1 flex">
             <div className="bg-light flex-1 h-screen flex flex-col p-[1vw]">
                 <div className="text-black text-[3vw] tracking-tighter font-semibold">
-                    {/* <Image src="/lgog.png" width={1} height={1}
-                     className="min-h-[4vw] w-auto" unoptimized/> */}SCRAPEYARD
+                    SCRAPEYARD
                 </div>
                 <div className="w-full">
                     <SearchBar/>
                 </div>
                 <div className="flex-1">
-                    <SampleResults open={open} setOpen={setOpen}
-                    data={data}
-                    setCurrIndex={setCurrIndex}
-                    currIndex={currIndex}
-                    setFocusPos={setFocusPos}
+                    <SampleResults 
+                        open={open} setOpen={setOpen}
+                        data={data} setCurrIndex={setCurrIndex}
+                        currIndex={currIndex} setFocusPos={setFocusPos} 
                     />
                 </div>
             </div>
-            <div className="bg-light flex-[3] flex justify-end ">
+            <div className="bg-light flex-[3] flex justify-end">
                 <div className="rounded-[3vw] bg-red-300 flex-1 overflow-hidden">
-                    <Map data={data} focusPos={focusPos} setFocusPos={setFocusPos}/>
+                    {focusPos && (  // Ensure focusPos is available before rendering the map
+                        <Map data={data} focusPos={focusPos} setFocusPos={setFocusPos} />
+                    )}
                 </div>
                 <ProductBrief open={open} setOpen={setOpen} currBrief={currBrief}/>
             </div>
         </div>
-    )
+    );
 }
 
 function Filter(temp){
-    console.log(temp,'herfejfhk');
-    let filtered=[]
-    let cond=JSON.parse(localStorage.getItem(ACCESS_FILTER));
-    for (let i=0; i<temp.length; i++){
-        // console.log(JSON.parse(localStorage.getItem(ACCESS_FILTER)),'sjsjsjs')
-        if (temp[i].brand==cond.maker ){
+    let filtered = [];
+    let cond = JSON.parse(localStorage.getItem(ACCESS_FILTER));
+    for (let i = 0; i < temp.length; i++) {
+        if (temp[i].brand === cond.maker) {
             filtered.push(temp[i]);
         }
     }
-    console.log("hereis the filtered ", filtered)
-    return filtered
+    return filtered;
 }

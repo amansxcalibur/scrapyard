@@ -5,6 +5,7 @@ import Image from "next/image"
 import ArrowDownLeft from "../svg/expand_arrow"
 import ChevronDefaultLeft from "../svg/contract_arrow"
 import X from "../svg/x"
+import Link from "next/link"
 
 export default function ProductBrief({open, setOpen, currBrief}){
     const [expand, setExpand] = useState({w:"min-w-[30vw]", h:"min-h-[20vw]"})
@@ -49,13 +50,14 @@ export default function ProductBrief({open, setOpen, currBrief}){
                 </div>
             </div>
             <div className={`${expand.w=='min-w-[30vw]'?'hidden':''} flex-[2] flex flex-col`}>
-                <p>Price: {currBrief.price}</p>
+                {/* <p>Price: {currBrief.price}</p>
                 <p>COORD: {currBrief.coord}</p>
                 <p>Transmission: {currBrief.transmission}</p>
                 <p>Cost: {currBrief.cost}</p>
                 <p>Mileage: {currBrief.mileage}</p>
                 <p>Fuel Type: {currBrief.fuel_type}</p>
-                <p>Previous Owners{currBrief.prev_owner_count}</p>
+                <p>Previous Owners{currBrief.prev_owner_count}</p> */}
+                <Link href="http://192.168.231.188:8501/?brand=hyundai&model=i20">Link to DV</Link>
             </div>
             <div className={`${expand.w=='min-w-[30vw]'?'':'hidden'}`}>
                 <button onClick={handleClick}>

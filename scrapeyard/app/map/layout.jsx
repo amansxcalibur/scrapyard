@@ -1,9 +1,9 @@
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className='flex'>
+    <div lang="en">
+      <div className='flex'>
         {children}
-      </body>
-    </html>
+      </div>
+    </div>
   );
 }

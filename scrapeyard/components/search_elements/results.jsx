@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function SampleResults({open, setOpen, setCurrIndex, currIndex, data, setFocusPos}){
+export default function SampleResults({open, setOpen, setCurrIndex, data, currIndex,  setFocusPos}){
     // const fruits = ["Apple", "Mango", "Banana", "GFG"];
     const handleShowBrief=(index, fruit)=>{
 
@@ -38,13 +38,7 @@ export default function SampleResults({open, setOpen, setCurrIndex, currIndex, d
                                     <Image src="/carwale.png" width={1} height={1} className="max-h-[2vw] w-auto" unoptimized/>
                                     :''}
                                 </Link>
-                                {/* <div className="hover:bg-white rounded-full min-h-[3vw] min-w-[3vw] flex justify-center items-center">
-                                    <Image src="/cars24web.webp" width={1} height={1} className="max-h-[2vw] w-auto" unoptimized/>
-                                </div>
-                                <div className="hover:bg-white rounded-full min-h-[3vw] min-w-[3vw] flex justify-center items-center">
-                                    {}
-                                    <Image src="/carwale.png" width={1} height={1} className="max-h-[2vw] w-auto" unoptimized/>
-                                </div> */}
+                                
                             </div>
                             <div className="flex-1 flex items-center">
                                 <p className="text-[2vw] font-semibold">${fruit.price}</p>
