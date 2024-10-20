@@ -33,22 +33,22 @@ export default function ProductBrief({open, setOpen, currBrief}){
                 <div className="w-full"></div>
                 <button onClick={handleClose}><X/></button>
             </div>
-            <div className={`flex-1 bg-blue-300 ${expand.w=='min-w-[30vw]'?'':'flex'}`}>
-                <div className="w-[30vw] overflow-hidden max-h-[20vw]"><Image src="/uWu.jpg" width={1} height={1} className="h-auto min-w-[30vw]"/></div>
-                <div>
+            <div className={` bg-blue-300 ${expand.w=='min-w-[30vw]'?'':'flex pb-[2vw]'} rounded-[2vw] p-[1vw]`}>
+                <div className="w-[30vw] overflow-hidden max-h-[20vw] rounded-[1vw]"><Image src="/uWu.jpg" width={1} height={1} className="h-auto min-w-[30vw]"/></div>
+                <div className="pl-[1vw]">
                     <div className="text-[2vw] font-semibold">{currBrief.name}</div>
-                    <div className={`${expand.w=='min-w-[30vw]'?'hidden':''} flex-1 flex flex-col`}>
-                        <p>Price: {currBrief.price}</p>
-                        <p>COORD: {currBrief.coord}</p>
-                        <p>Transmission: {currBrief.transmission}</p>
-                        <p>Cost: {currBrief.cost}</p>
-                        <p>Mileage: {currBrief.mileage}</p>
-                        <p>Fuel Type: {currBrief.fuel_type}</p>
-                        <p>Previous Owners{currBrief.prev_owner_count}</p>
+                    <div className={`${expand.w=='min-w-[30vw]'?'hidden':''} flex-1 flex flex-col text-[1.2vw]`}>
+                        <p className="text-[3vw] font-semibold">${currBrief.price}</p>
+                        <p><strong>COORD:</strong> {currBrief.coord}</p>
+                        <p><strong>Transmission:</strong> {currBrief.transmission}</p>
+                        <p><strong>Cost:</strong> {currBrief.cost}</p>
+                        <p><strong>Mileage:</strong> {currBrief.mileage}</p>
+                        <p><strong>Fuel Type:</strong> {currBrief.fuel_type}</p>
+                        <p><strong>Previous Owners: </strong>{currBrief.prev_owner_count}</p>
                     </div>
                 </div>
             </div>
-            <div className={`${expand.w=='min-w-[30vw]'?'hidden':''} flex-1 flex flex-col`}>
+            <div className={`${expand.w=='min-w-[30vw]'?'hidden':''} flex-[2] flex flex-col`}>
                 <p>Price: {currBrief.price}</p>
                 <p>COORD: {currBrief.coord}</p>
                 <p>Transmission: {currBrief.transmission}</p>
